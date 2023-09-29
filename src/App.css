@@ -204,6 +204,10 @@ input, label {
   text-decoration: underline;
 }
 
+fieldset h3 {
+  padding-left: 10px;
+}
+
 
 /* Menu */
 
@@ -355,3 +359,4 @@ footer ul li {
 .hidden {
   display: none;
 }
+

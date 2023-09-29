@@ -7,8 +7,8 @@ import ConfirmedBooking from './ConfirmedBooking';
 const Main = () => {
 
   const seedRandom = function(seed) {
-    var m = 2**35 - 31;
-    var a = 185852;
+    var m = 2**45;
+    var a = 175834;
     var s = seed % m;
     return function() {
       return (s = s * a % m) /m;
@@ -18,7 +18,7 @@ const Main = () => {
   const fetchAPI = function(date) {
     let result = [];
     let random = seedRandom(date.getDate());
-    for (let i = 17; i <= 23; i++) {
+    for (let i = 15; i <= 23; i++) {
       if (random() < 0.5) {
         result.push(i + ':00');
       }

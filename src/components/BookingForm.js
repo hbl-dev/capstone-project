@@ -29,7 +29,7 @@ const BookingForm = (props) => {
 
                         <div>
                             <label htmlFor="book-time">Choose Time:</label>
-                            <select id="book-time" value={times} onChange={(e) => setTimes(e.target.value)} >
+                            <select id="book-time" value={times} onChange={(e) => setTimes(e.target.value)} required>
                                 <option value="">Select a Time</option>
                                 {
                                     props.availableTimes.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})
@@ -39,12 +39,12 @@ const BookingForm = (props) => {
 
                         <div>
                             <label>Number of Guests:</label>
-                            <input id="book-guests" min="1" value={guests} onChange={(e) => setGuests(e.target.value)}/>
+                            <input id="book-guests" min="1" type="number" value={guests | 1} onChange={(e) => setGuests(e.target.value)} required/>
                         </div>
 
                         <div>
                             <label htmlFor="book-occasion">Ocassion:</label>
-                            <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                            <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
                                 <option>Birthday</option>
                                 <option>Business</option>
                                 <option>Anniversary</option>
@@ -53,7 +53,7 @@ const BookingForm = (props) => {
                         </div>
 
                         <div className="btnReceive">
-                            <input aria-label="On Click" type="submit" value={"Make your reservation"}/>
+                            <input aria-label="On Click" type="submit" value={"Make Your Reservation"}/>
                         </div>
                     </fieldset>
 
